@@ -398,7 +398,7 @@
         person_7_institution_t,person_8_institution_t,person_9_institution_t,
         mods_gps_t, mods_region_t, mods_site_t, mods_ecosystem_t,
         mods_timespan_start_t, mods_timespan_end_t, description_t, mods_title_info_main_title_t, mods_0_title_info_0_main_title_t, embargo_release_date_dt, note_t,
-        object_type_facet, department_facet, peer_reviewed_facet
+        object_type_facet, department_facet, peer_reviewed_facet, creator_t
       </str>
       <str name="mm">
         2&lt;-1 5&lt;-2 6&lt;90%
@@ -438,7 +438,7 @@ journal_title_info_t, journal_title_info_main_title_t, journal_issue_publication
         person_7_institution_t,person_8_institution_t,person_9_institution_t,
         mods_gps_t, mods_region_t, mods_site_t, mods_ecosystem_t,
         mods_timespan_start_t, mods_timespan_end_t, description_t, mods_title_info_t,mods_0_title_info_0_main_title_t, embargo_release_date_dt, note_t,
-        object_type_facet, department_facet, peer_reviewed_facet
+        object_type_facet, department_facet, peer_reviewed_facet, creator_t
       </str>
       <str name="mm">
         2&lt;-1 5&lt;-2 6&lt;90%
@@ -465,7 +465,7 @@ journal_title_info_t, journal_title_info_main_title_t, journal_issue_publication
       <str name="qf">id^0.8 id_t^0.8 format text^0.3</str>
        <str name="pf">id^0.9  id_t^0.9 text^0.5</str>
      <str name="fl">
-        id,text,title_t,date_t,year_facet,month_facet,medium_t,series_facet,box_facet,folder_facet
+        id,text,title_t,date_t,year_facet,month_facet,medium_t,series_facet,box_facet,folder_facet,creator_t
      </str>
      <str name="mm">
         2&lt;-1 5&lt;-2 6&lt;90%
@@ -534,7 +534,7 @@ journal_title_info_t, journal_title_info_main_title_t, journal_issue_publication
         ord(popularity)^0.5 recip(rord(price),1,1000,1000)^0.3
      </str>
      <str name="fl">
-        id,text,title_facet,date_t,medium_t,location_t
+        id,text,title_facet,date_t,medium_t,location_t,creator_t
      </str>
      <str name="mm">
         2&lt;-1 5&lt;-2 6&lt;90%

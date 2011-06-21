@@ -20,7 +20,7 @@ describe Hydra::ModsArticle do
     it "should generate a new person node" do
       node = Hydra::ModsArticle.person_template
       node.should be_kind_of(Nokogiri::XML::Element)
-      node.to_xml.should == "<name type=\"personal\">\n  <namePart type=\"family\"/>\n  <namePart type=\"given\"/>\n  <affiliation/>\n  <computing_id/>\n  <description/>\n  <role>\n    <roleTerm type=\"text\">Author</roleTerm>\n  </role>\n</name>"
+      node.to_xml.should == "<name type=\"personal\"><namePart type=\"family\"/><namePart type=\"given\"/><affiliation/><computing_id/><description/><role><roleTerm type=\"text\">Author</roleTerm></role></name>"
     end
   end
   describe "insert_contributor" do

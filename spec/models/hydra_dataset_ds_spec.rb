@@ -13,7 +13,7 @@ describe HydraDatasetDs do
     it "should generate a new person node" do
       node = HydraDatasetDs.grant_template
       node.should be_kind_of(Nokogiri::XML::Element)
-      node.to_xml.should == "<grant>\n  <organization/>\n  <number/>\n</grant>"
+      node.to_xml.should == "<grant><organization/><number/></grant>"
     end
   end
   
