@@ -9,10 +9,11 @@ module Blacklight::Routes
 
     # Set the default controller:
     map.root :controller => 'catalog', :action=>'index'
+
     map.resources :bookmarks, :collection => {:clear => :delete}
     map.resource :user
-
     map.catalog_facet "catalog/facet/:id", :controller=>'catalog', :action=>'facet'
+    map.connect '/catalog/:id', :controller => 'catalog', :action => 'show', :requirements => { :id => /.*/ }
 
     map.resources :search_history, :collection => {:clear => :delete}
     map.resources :saved_searches, :collection => {:clear => :delete}, :member => {:save => :put}
