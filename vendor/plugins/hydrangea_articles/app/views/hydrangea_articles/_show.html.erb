@@ -16,14 +16,14 @@
 
 	<% unless @document_fedora.file_objects(:response_format=>:solr).hits.empty? %>
 		<fieldset><legend>Files</legend>
-	    <div id="uploads" data-pid=<%= params[:id] %>>	
+	    <div id="uploads" data-pid=<%= params[:id] %>>
 		  <table id="file_assets" class="multipleEdit">
 		    <tr>
 		      <th>File Name</th>
 		      <th>Size</th>
 		      <th>Uploaded</th>
 		    </tr>
-		
+
 			<% @document_fedora.file_objects(:response_format=>:solr).each do |result| %>
 			<tr class="file_asset" id=<%= result["id"] %>>
 			  <td>
@@ -37,8 +37,8 @@
 			    <%= format_date dt %>
 			  </td>
 			</tr>
-			<% end %>		
-		  </table>	
+			<% end %>
+		  </table>
 			</div>
  		</fieldset>
 	<% end %>

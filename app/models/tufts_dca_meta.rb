@@ -1,4 +1,3 @@
-module Tufts
 
 
 # 2011-04-16
@@ -9,7 +8,12 @@ module Tufts
 # Since we're new to opinionated metadata rather than drive yourself nuts make sure to read
 # the rdoc: http://rubydoc.info/gems/om/1.2.2/frames
 #
-  class DCAMeta  < ActiveFedora::NokogiriDatastream
+  class TuftsDcaMeta  < ActiveFedora::NokogiriDatastream
+
+    def initialize(attrs=nil)
+    super
+    puts "DCAMETA Initialized"
+    end
 
     set_terminology do |t|
       t.root("path"=>"dc", "xmlns"=>"http://www.fedora.info/definitions/",
@@ -94,27 +98,4 @@ module Tufts
 
       return builder.doc
     end
-
-    def to_solr(solr_doc=Hash.new)
-      super(solr_doc)
-      #extract_title
-      #::Solrizer::Extractor.insert_solr_field_value(solr_doc, "title", "mikek")
-      #::Solrizer::Extractor.insert_solr_field_value(solr_doc, "object_type_facet", "Faculty Publication")
-      return solr_doc
-    end
-
-    def extract_title
-      title = {}
-      self.find_by_terms(:title).each do |title|
-       puts "Title = #{title}"
-       # name_parts = person.children.inject({}) do |hash,child|
-       #   hash[child.get_attribute(:type)] = child.text if ["family","given"].include? child.get_attribute(:type)
-       #   hash
-       # end
-       # ::Solrizer::Extractor.insert_solr_field_value(names,  "person_full_name_facet", [name_parts["family"], name_parts["given"]].join(", ") ) if name_parts.keys == ["family","given"]
-       # names
-      end
-      return title
-    end
   end
-end

@@ -1,6 +1,3 @@
-module Tufts
-
-
 # 2011-04-16
 #
 # My take on what our faculty publication content model is going to look like
@@ -9,7 +6,7 @@ module Tufts
 # Since we're new to opinionated metadata rather than drive yourself nuts make sure to read
 # the rdoc: http://rubydoc.info/gems/om/1.2.2/frames
 #
-  class FileMeta  < ActiveFedora::NokogiriDatastream
+  class TuftsFileMeta  < ActiveFedora::NokogiriDatastream
 
     #WTF is really going on here?
     # @terminology = OM::XML::Terminology::Builder.new( &block ).build
@@ -32,4 +29,4 @@ module Tufts
     end
 
   end
-end
+

@@ -1,6 +1,4 @@
 require "hydra"
-require "lib/metadata/tufts_filemeta"
-require "lib/metadata/tufts_dcameta"
 
 # 2011-04-10
 #
@@ -23,7 +21,7 @@ class TuftsFacultyPublication < ActiveFedora::Base
   has_metadata :name => "rightsMetadata", :type => Hydra::RightsMetadata 
 
   # Tufts specific needed metadata streams
-  has_metadata :name => "DCA-META", :type => Tufts::DCAMeta
+  has_metadata :name => "DCA-META", :type => TuftsDcaMeta
 
   # DCA_admin might be the one that we have started clearing out -- it used to have metadata
   # but it was all wrong, so now we're just putting it in as empty.
@@ -32,11 +30,11 @@ class TuftsFacultyPublication < ActiveFedora::Base
 
   #MK 2011-04-13 - Are we really going to need to access FILE-META from FILE-META.  I'm guessing
   # not.
-  has_metadata :name => "FILE-META", :type => Tufts::FileMeta
+  has_metadata :name => "FILE-META", :type => TuftsFileMeta
 
   #Our Binary streams
-  has_datastream :name=>"Access.xml", :type=>ActiveFedora::Datastream, :controlGroup=>'E'
-  has_datastream :name=>"Archival.pdf", :type=>ActiveFedora::Datastream, :controlGroup=>'E'
+  #has_datastream :name=>"Access.xml", :type=>ActiveFedora::Datastream, :controlGroup=>'E'
+  #has_datastream :name=>"Archival.pdf", :type=>ActiveFedora::Datastream, :controlGroup=>'E'
 
   #def initialize()
   ##    super()

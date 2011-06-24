@@ -4,43 +4,19 @@
 <div class="document_viewer" id="cover_container">
 
 	<h1>
-		<% unless get_values_from_datastream(@document_fedora,"DCA-META", [:"dc:title"]).first.empty? %>
-	      <%= get_values_from_datastream(@document_fedora,"DCA-META", [:"dc:title"]).first %>
+		<% unless get_values_from_datastream(@document_fedora,"DCA-META", [:title]).first.empty? %>
+	      <%= get_values_from_datastream(@document_fedora,"DCA-META", [:title]).first %>
 		<% else %>
 			<%= params[:id] %>
 		 <% end %>
 	</h1>
 
-
-
-
-	<% unless @document_fedora.file_objects(:response_format=>:solr).hits.empty? %>
-		<fieldset><legend>Files</legend>
-	    <div id="uploads" data-pid=<%= params[:id] %>>
-		  <table id="file_assets" class="multipleEdit">
-		    <tr>
-		      <th>File Name</th>
-		      <th>Size</th>
-		      <th>Uploaded</th>
-		    </tr>
-
-			<% @document_fedora.file_objects(:response_format=>:solr).each do |result| %>
-			<tr class="file_asset" id=<%= result["id"] %>>
-			  <td>
-			    <%= link_to result[solr_name("title", :text)], file_asset_path(result["id"]) %>
-			  </td>
-			  <td>
-			    <%= result[solr_name("extent", :text)] %>
-			  </td>
-			  <td>
-			    <% dt = DateTime.parse(result[ solr_name("system_create", :date)] ) %>
-			    <%= format_date dt %>
-			  </td>
-			</tr>
-			<% end %>
-		  </table>
-			</div>
- 		</fieldset>
-	<% end %>
+  <% unless get_values_from_datastream(@document_fedora,"DCA-META", [:description]).first.empty? %>
+  <fieldset><legend>Abstract</legend>
+  <div id="abstract" class="browse_value">
+      <%= white_list( RedCloth.new(get_values_from_datastream(@document_fedora,"DCA-META", [:description]).first, [:sanitize_html]).to_html) %>
+  </div>
+  </fieldset>
+  <% end %>
 
 </div>
