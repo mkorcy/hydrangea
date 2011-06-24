@@ -13,6 +13,7 @@ module Blacklight::Routes
     map.resources :bookmarks, :collection => {:clear => :delete}
     map.resource :user
     map.catalog_facet "catalog/facet/:id", :controller=>'catalog', :action=>'facet'
+    map.connect '/catalog/', :controller => 'catalog', :action => 'index'
     map.connect '/catalog/:id', :controller => 'catalog', :action => 'show', :requirements => { :id => /.*/ }
 
     map.resources :search_history, :collection => {:clear => :delete}
