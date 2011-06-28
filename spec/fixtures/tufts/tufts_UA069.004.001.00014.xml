@@ -218,7 +218,7 @@ xsi:schemaLocation="info:fedora/fedora-system:def/foxml# http://www.fedora.info/
   </foxml:datastream>
 <foxml:datastream ID="Archival.pdf" STATE="A" CONTROL_GROUP="E" VERSIONABLE="true">
 <foxml:datastreamVersion ID="Archival.pdf.0" LABEL="Revised Plan of Work" CREATED="2005-05-25T20:33:57.600Z" MIMETYPE="application/pdf">
-<foxml:contentLocation TYPE="URL" REF="http://bucket01.lib.tufts.edu/data05/tufts/central/dca/UA069/archival_pdf/UA069.004.001.00014.archival.pdf"/>
+<foxml:contentLocation TYPE="URL" REF="http://dl.dropbox.com/u/43822/tufts-UA005.036.001.00001.pdf"/>
 </foxml:datastreamVersion>
 </foxml:datastream>
 </foxml:digitalObject>

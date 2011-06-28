@@ -10,10 +10,6 @@
 #
   class TuftsDcaMeta  < ActiveFedora::NokogiriDatastream
 
-    def initialize(attrs=nil)
-    super
-    puts "DCAMETA Initialized"
-    end
 
     set_terminology do |t|
       t.root("path"=>"dc", "xmlns"=>"http://www.fedora.info/definitions/",
@@ -46,7 +42,7 @@
       t.resolution(:namespace_prefix=>"dcatech",:path => "resolution",:index_as=>[:facetable],:label=>"resolution")
       t.bitDepth(:namespace_prefix=>"dcatech",:path => "bitdepth",:index_as=>[:facetable],:label=>"bit depth")
       t.colorSpace(:namespace_prefix=>"dcatech",:path => "colorspace",:index_as=>[:facetable],:label=>"color space")
-      t.filesize(:namespace_prefix=>"dcatech",:path => "filesize",:index_as=>[:facetable],:label=>"file size")
+      t.filesize(:namespace_prefix=>"dcatech",:path => "fileSize",:index_as=>[:facetable],:label=>"file size")
     end
 
     # Generates an empty Mods Article (used when you call ModsArticle.new without passing in existing xml)
